@@ -264,9 +264,24 @@ a { -webkit-tap-highlight-color: transparent; }
   display: flex;
   align-items: center;
   gap: 13px;
-  color: rgba(255, 255, 255, .62);
-  font-weight: 800;
-  letter-spacing: .2em;
+  opacity: .58;
+}
+
+.empire-logo,
+.datax-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.empire-logo {
+  width: 42px;
+}
+
+.datax-logo {
+  width: 82px;
 }
 
 .partner-rule {
