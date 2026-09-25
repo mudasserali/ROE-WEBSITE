@@ -105,9 +105,21 @@ export default function RoeHome() {
         </div>
 
         <div className="hyperspeed-partners" aria-label="Partners">
-          <span>EMPIRE</span>
+          <Image
+            className="empire-logo"
+            src="/brand/empire.webp"
+            alt="EMPIRE"
+            width={140}
+            height={108}
+          />
           <span className="partner-rule" aria-hidden="true" />
-          <span>DATA-X</span>
+          <Image
+            className="datax-logo"
+            src="/brand/data-x.webp"
+            alt="DATA-X"
+            width={500}
+            height={93}
+          />
         </div>
       </footer>
     </main>
