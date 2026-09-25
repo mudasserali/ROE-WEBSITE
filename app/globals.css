@@ -3,15 +3,16 @@
 :root {
   --roe-black: #050505;
   --roe-ivory: #f4f0e8;
-  --roe-red: #c8152f;
-  --roe-pink: #ed519e;
-  --roe-blue: #72c2cf;
+  --roe-red: #ff322f;
+  --roe-gold: #f3dea0;
 }
 
 * { box-sizing: border-box; }
 
-html, body {
+html,
+body {
   margin: 0;
+  width: 100%;
   min-height: 100%;
   background: var(--roe-black);
   color: var(--roe-ivory);
@@ -19,88 +20,363 @@ html, body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
 
+button,
+a { -webkit-tap-highlight-color: transparent; }
+
 ::selection {
-  background: var(--roe-pink);
-  color: #050505;
+  background: var(--roe-red);
+  color: #fff;
 }
 
 .roe-shell {
   position: relative;
   min-height: 100svh;
+  background: #000;
+}
+
+.hyperspeed-landing {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
   isolation: isolate;
+  background: #000;
 }
 
-.roe-canvas {
-  position: fixed !important;
+.hyperspeed-background {
+  position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  overflow: hidden;
+  background: #000;
 }
 
-.roe-vignette {
-  position: fixed;
+.hyperspeed-background #lights {
   inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hyperspeed-background canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hyperspeed-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
-  z-index: -1;
   background:
-    radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.44) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.5));
+    linear-gradient(90deg, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .23) 36%, rgba(0, 0, 0, .08) 62%, rgba(0, 0, 0, .38) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, .6) 0%, transparent 23%, transparent 65%, rgba(0, 0, 0, .72) 100%);
 }
 
-.roe-ui {
-  min-height: 100svh;
+.hyperspeed-grain {
+  position: absolute;
+  inset: -40%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  transform: rotate(8deg);
+}
+
+.hyperspeed-header,
+.hyperspeed-hero,
+.hyperspeed-footer {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hyperspeed-header {
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 28px;
+  gap: 32px;
+  padding: clamp(20px, 3vw, 40px);
 }
 
-.roe-wordmark {
-  font-size: clamp(2rem, 8vw, 8rem);
-  line-height: .82;
-  letter-spacing: -.06em;
-  font-weight: 800;
-  text-transform: uppercase;
-  max-width: 980px;
+.roe-property-logo {
+  width: clamp(210px, 24vw, 365px);
+  height: auto;
+  object-fit: contain;
 }
 
-.roe-kicker {
-  font-size: 12px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  opacity: .75;
-}
-
-.roe-nav {
+.hyperspeed-system {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 22px;
+  align-items: center;
+  padding-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, .65);
 }
 
-.roe-chip {
-  border: 1px solid rgba(255,255,255,.28);
-  border-radius: 999px;
-  padding: 10px 14px;
-  backdrop-filter: blur(14px);
-  background: rgba(0,0,0,.18);
+.hyperspeed-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, .94);
 }
 
-.roe-footer {
+.hyperspeed-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--roe-red);
+  box-shadow: 0 0 18px rgba(255, 50, 47, .85);
+}
+
+.hyperspeed-hero {
+  inset: 0;
   display: flex;
+  align-items: center;
+  padding: clamp(24px, 5vw, 76px);
+}
+
+.hyperspeed-hero-copy {
+  width: min(46vw, 760px);
+  transform: translateY(3vh);
+}
+
+.hyperspeed-kicker {
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .62);
+}
+
+.roe-script-logo {
+  display: block;
+  width: clamp(180px, 22vw, 340px);
+  height: auto;
+  margin: 0 0 2px -10px;
+  object-fit: contain;
+}
+
+.hyperspeed-hero h1 {
+  margin: -12px 0 26px;
+  max-width: 760px;
+  font-size: clamp(3.8rem, 8.4vw, 9rem);
+  font-weight: 900;
+  line-height: .75;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: #fff;
+  text-shadow: 0 10px 60px rgba(0, 0, 0, .55);
+}
+
+.hyperspeed-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hyperspeed-presave {
+  pointer-events: auto;
+  display: inline-flex;
+  min-width: 142px;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
-  align-items: end;
-  font-size: 12px;
+  padding: 13px 14px 12px 16px;
+  border: 1px solid rgba(255, 255, 255, .34);
+  border-radius: 999px;
+  background: rgba(8, 8, 8, .34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  letter-spacing: .12em;
-  opacity: .8;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
 
-@media (max-width: 700px) {
-  .roe-ui { padding: 18px; }
-  .roe-footer { align-items: start; flex-direction: column; }
+.hyperspeed-presave:hover {
+  transform: translateY(-1px);
+  border-color: #fff;
+  background: #fff;
+  color: #050505;
+}
+
+.hyperspeed-presave span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.hyperspeed-hint {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+}
+
+.hyperspeed-footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  padding: clamp(20px, 3vw, 40px);
+  font-size: 9px;
+  letter-spacing: .16em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.hyperspeed-footer > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.hyperspeed-footer strong {
+  font-size: 10px;
+  letter-spacing: .2em;
+}
+
+.hyperspeed-footer > div:first-child span {
+  color: rgba(255, 255, 255, .52);
+}
+
+.hyperspeed-partners {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  opacity: .58;
+}
+
+.empire-logo,
+.datax-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.empire-logo {
+  width: 42px;
+}
+
+.datax-logo {
+  width: 82px;
+}
+
+.partner-rule {
+  width: 26px;
+  height: 1px;
+  background: rgba(255, 255, 255, .28);
+}
+
+@media (max-width: 820px) {
+  .hyperspeed-landing {
+    min-height: 560px;
+  }
+
+  .hyperspeed-header {
+    padding: 18px;
+  }
+
+  .roe-property-logo {
+    width: min(62vw, 280px);
+  }
+
+  .hyperspeed-system > span:first-child {
+    display: none;
+  }
+
+  .hyperspeed-hero {
+    align-items: flex-end;
+    padding: 0 18px 116px;
+  }
+
+  .hyperspeed-hero-copy {
+    width: 100%;
+    transform: none;
+  }
+
+  .roe-script-logo {
+    width: min(48vw, 250px);
+    margin-left: -6px;
+  }
+
+  .hyperspeed-hero h1 {
+    width: min(94vw, 670px);
+    margin-top: -7px;
+    margin-bottom: 20px;
+    font-size: clamp(3.2rem, 15vw, 6.7rem);
+    line-height: .78;
+  }
+
+  .hyperspeed-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .hyperspeed-hint {
+    max-width: 240px;
+    line-height: 1.45;
+  }
+
+  .hyperspeed-footer {
+    padding: 18px;
+  }
+
+  .hyperspeed-footer > div:first-child {
+    display: none;
+  }
+
+  .hyperspeed-partners {
+    margin-left: auto;
+  }
+
+  .hyperspeed-veil {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.05) 28%, rgba(0,0,0,.12) 52%, rgba(0,0,0,.8) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.42), transparent 70%);
+  }
+}
+
+@media (max-height: 680px) and (min-width: 821px) {
+  .hyperspeed-hero-copy {
+    transform: translateY(7vh);
+  }
+
+  .roe-script-logo {
+    width: 210px;
+  }
+
+  .hyperspeed-hero h1 {
+    font-size: clamp(3.4rem, 7.1vw, 6.6rem);
+    margin-bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hyperspeed-presave {
+    transition: none;
+  }
 }
