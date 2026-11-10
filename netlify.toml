@@ -1,0 +1,8 @@
+[build]
+  base = "rescue"
+  command = "python3 build_site.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.13"
+
