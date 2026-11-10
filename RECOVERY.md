@@ -23,7 +23,9 @@ This branch restores the complete approved post-release update without a large b
 
 ## Build and deploy
 
-Recovery verification completed November 9, 2026: all 207 source objects and all 168 output files passed size and SHA-256 checks. All 14 JavaScript files passed Node syntax checks. All 31 radio tracks and both featured trailer files are present; no retired admin files are in the output. Browser playback of the rebuilt output has not yet been checked.
+Recovery verification completed November 9, 2026: all 207 source objects and all 168 output files passed size and SHA-256 checks. A fresh clone of this GitHub branch rebuilt the same verified output. All 14 JavaScript files passed Node syntax checks. All 31 radio tracks and both featured trailer files are present; no retired admin files are in the output.
+
+Desktop browser checks passed on the recovered output: MUSIC loads the full press package; its press-assets navigation scrolls from the top to the correct section; both top Media trailers play muted without media errors; the radio plays the Team Zissou intro first at the saved 70% volume; social links remain visible while navigating. Mobile layout was not rechecked in this recovery pass.
 
 Deployment status: not yet published. Netlify is waiting at its GitHub authorization step before the repository can be linked. The October 17 live deployment remains the rollback point.
 
