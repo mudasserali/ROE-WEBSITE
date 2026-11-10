@@ -74,3 +74,18 @@ Local browser QA passed at 375 × 667, 390 × 844, and 430 × 932. The Home imag
 The revised snapshot verifies 211 source inputs and 168 output files, totalling 407,753,100 bytes. Four production files changed; all other production output hashes are unchanged. Syntax checks passed for both edited JavaScript files. Physical iPhone/Safari testing remains unperformed.
 
 Production deployment: published November 10, 2026, deploy `6af316190c37b7fe6b65ffa1` from mobile-fix commit `3462acefcdc46ff66eaa145ad0fbc51fb062ef82`. All four changed production files match the verified local SHA-256 values. The live 390px check measured the Home image center at 195px, social center at 195px, and the content frame starting below the 64px social strip.
+
+
+## Desktop layout update — November 10, 2026
+
+Desktop-only rules apply at 761px and above. Mobile composition and content are retained.
+
+- Home social links are fixed 24px from the left and centered vertically with the bottom main menu.
+- MUSIC's main menu is 24px from the left; social links remain top-right. The existing 205px radio launcher sits between them on the same horizontal row.
+- Media's green Listen Now button is hidden on desktop, its menu is far left, its social links far right, and its ROE MEDIA split-flap sign sits between them. The inherited collapsing tile widths were corrected.
+- ROE World's social links are far right, its desktop Listen Now button is hidden, and the ROE WORLD split-flap is immediately beside the top-left logo.
+- Contact has a flat black desktop background, its 231px radio launcher immediately to the right of the logo, and a prominent official cover beside the existing enquiry form. The Music page's 11 Apple Music playlist placements (10 table rows, including the combined Canada/Russia row) are repeated with their exact country links and historical-position date note.
+
+Browser QA passed at 1363px and 1024px: the MUSIC menu/radio/social groups do not overlap; Home social/menu center lines match; Media and World buttons are hidden; the flip signs are readable and in the requested positions; Contact loads the cover, all editorial rows, and a flat black background without horizontal overflow. At 390px, Contact retains its original background and has no injected editorial section; the social bar remains centered in its black top strip; Media's original mobile Listen Now button remains visible.
+
+Production deployment: pending the desktop layout commit.
