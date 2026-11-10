@@ -27,7 +27,9 @@ Recovery verification completed November 9, 2026: all 207 source objects and all
 
 Desktop browser checks passed on the recovered output: MUSIC loads the full press package; its press-assets navigation scrolls from the top to the correct section; both top Media trailers play muted without media errors; the radio plays the Team Zissou intro first at the saved 70% volume; social links remain visible while navigating. Mobile layout was not rechecked in this recovery pass.
 
-Deployment status: not yet published. Netlify is waiting at its GitHub authorization step before the repository can be linked. The October 17 live deployment remains the rollback point.
+Deployment status: published November 10, 2026 at 7:21 AM America/Toronto. Netlify is connected to mudasserali/ROE-WEBSITE, production branch rescue/2026-11-09. The first successful Git-backed deploy is `6af30c4fe259643110e37e3d` from commit `f368540ff2b140ecdf851e31dd297680b5684a79`: https://6af30c4fe259643110e37e3d--genuine-gelato-cadd02.netlify.app . Netlify reported 168 files, a 22-second successful build, and publication to https://roseofengland.art . The October 17 deployment remains the rollback point.
+
+Live production checks on November 10 passed: MUSIC loads the complete press dossier with territory-specific Apple Music links; Press assets navigation scrolls from 0 to 7920 pixels; both top Media trailers are playing muted with readyState 4 and no media errors; the Team Zissou radio opener plays from the production-domain MP3 (readyState 4, playback advanced past 29 seconds); social links are visible on MUSIC and Media. Mobile layout was not rechecked.
 
 Use this recovery branch in the existing Netlify project. Its netlify.toml sets base directory `rescue`, build command `python3 build_site.py`, and publish directory `site`. Python 3.11 or newer is required; no third-party packages are used.
 
@@ -39,4 +41,4 @@ To run locally: `python3 rescue/build_site.py`. The verified output is `rescue/s
 
 This is a rescue snapshot, not a redesign. It depends on the pinned original Netlify deployment and current public press asset URLs during build. Netlify's automatic deletion setting is 90 days for eligible old deployments. Preserve these sources until the recovered media has a permanent Git/artifact mirror; a future missing/changed source will stop the build safely. The generated production site itself is self-contained.
 
-After deployment, record the new deploy ID and verification results here. Keep the original deployment available for rollback. Further page updates should begin from the verified output and be committed with their matching file hashes.
+GitHub → Netlify deployment is now configured: commits to rescue/2026-11-09 trigger production builds. Keep the original deployment available for rollback. Future updates should begin from the verified production output and include matching file hashes in the build manifest. Use a separate branch for changes that need a preview before publishing, and update this log with each approved release.
