@@ -54,7 +54,7 @@ Tested the live production site in Chrome at responsive viewport sizes 375 × 66
 - Booking at 375 × 667 fits its frame, shows OUT NOW / RELEASED OCTOBER 23, 2026, and has form fields within the page width. Its close control works. No enquiry was submitted.
 - Contact at 430px fits without horizontal overflow. Home loads and displays its mobile entrance artwork and bottom navigation.
 
-Open mobile layout findings (not yet fixed):
+Mobile layout findings from the initial verification (resolved in the fix below):
 1. The floating social-links bar overlaps playlist positions on MUSIC at 390px and Booking description text at 375px. Its open-area placement does not consistently avoid text inside nested frames.
 2. ROE World at a 430px outer viewport has 430px inner document width against a 415px frame client width, producing a small horizontal scrollbar in the Chrome test. Recheck after correcting the frame-width/scrollbar interaction.
 
@@ -73,4 +73,4 @@ Local browser QA passed at 375 × 667, 390 × 844, and 430 × 932. The Home imag
 
 The revised snapshot verifies 211 source inputs and 168 output files, totalling 407,753,100 bytes. Four production files changed; all other production output hashes are unchanged. Syntax checks passed for both edited JavaScript files. Physical iPhone/Safari testing remains unperformed.
 
-Production deployment: pending this mobile-fix commit. Record the successful deploy ID after publication.
+Production deployment: published November 10, 2026, deploy `6af316190c37b7fe6b65ffa1` from mobile-fix commit `3462acefcdc46ff66eaa145ad0fbc51fb062ef82`. All four changed production files match the verified local SHA-256 values. The live 390px check measured the Home image center at 195px, social center at 195px, and the content frame starting below the 64px social strip.
