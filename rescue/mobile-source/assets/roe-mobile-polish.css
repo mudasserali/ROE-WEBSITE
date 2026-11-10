@@ -1,0 +1,107 @@
+/* Mobile page refinements. Desktop compositions retain their existing rules. */
+.roe-booking-short{display:none}
+.roe-music-masthead{display:none}
+@media(max-width:760px){
+  body[data-roe-mobile-page] #roe-page-sign{
+    position:fixed!important;inset:auto!important;top:100px!important;right:20px!important;
+    left:auto!important;bottom:auto!important;width:auto!important;max-width:calc(100vw - 40px)!important;
+    transform:none!important;z-index:90!important;gap:4px!important;justify-items:end!important;
+  }
+  body[data-roe-mobile-page] #roe-page-sign .rps-caption{font-size:6.5px!important;letter-spacing:.2em!important;text-align:right}
+  body[data-roe-mobile-page] #roe-page-sign .rps-board{width:auto!important;max-width:100%!important;padding:4px!important;gap:1px!important;justify-content:center}
+  body[data-roe-mobile-page] #roe-page-sign .rps-tile{width:14px!important;min-width:14px!important;max-width:14px!important;height:25px!important;flex:none!important}
+  body[data-roe-mobile-page] #roe-page-sign .rps-glyph{font-size:12px!important}
+
+  body[data-roe-mobile-page="contact"] .topbar{height:84px!important;min-height:84px!important;grid-template-rows:1fr!important;padding:10px 20px!important}
+  body[data-roe-mobile-page="contact"] .topbar-meta{display:none!important}
+  body[data-roe-mobile-page="contact"] .topbar-brand .logo-script{width:145px!important;max-width:145px!important;max-height:64px!important}
+  body[data-roe-mobile-page="contact"] .hero-shell{width:calc(100% - 40px)!important;max-width:420px!important;margin:0 auto!important;padding:168px 0 calc(125px + env(safe-area-inset-bottom,0px))!important}
+  body[data-roe-mobile-page="contact"] .contact-card{padding:22px!important}
+
+  body[data-roe-mobile-page="world"] #roe-world-london-sign{display:none!important}
+  body[data-roe-mobile-page="world"] .hero-card .hero-btn{width:calc(100% - 88px)!important}
+
+  body[data-roe-mobile-page="media"] .topbar{height:auto!important;min-height:84px!important}
+  body[data-roe-mobile-page="media"] .topbar-inner{min-height:84px!important;align-content:center!important;justify-items:center!important;padding-block:12px!important}
+  body[data-roe-mobile-page="media"] .topbar .roe-release-header{justify-self:center!important;justify-content:center!important;width:max-content!important;max-width:100%!important}
+  body[data-roe-mobile-page="media"] .hero.wrap{padding-top:72px!important}
+  body[data-roe-mobile-page="media"] .hero-stage.hero-cinema-stage{height:auto!important;min-height:0!important;aspect-ratio:auto!important}
+  body[data-roe-mobile-page="media"] .hero-cinema-shell{height:auto!important;min-height:0!important}
+  body[data-roe-mobile-page="media"] .hero-cinema-shell .hero-cinema-dock{min-height:86px!important;padding:14px 16px!important}
+
+  body[data-roe-mobile-page="music"],body[data-roe-mobile-page="music"] .hero{background:#000!important}
+  body[data-roe-mobile-page="music"] .hero::before,body[data-roe-mobile-page="music"] .hero::after{display:none!important;content:none!important}
+  body[data-roe-mobile-page="music"] #roe-page-sign{top:12px!important}
+  body[data-roe-mobile-page="music"] .count-panel .eyebrow{margin-bottom:8px!important}
+  body[data-roe-mobile-page="music"] .presave-btn .spotify-icon{width:24px!important;height:24px!important}
+  body[data-roe-mobile-page="music"] .bg-cleanup{display:none!important}
+  body[data-roe-mobile-page="music"] .roe-music-masthead{display:flex;position:absolute;top:10px;left:20px;height:118px;align-items:center;z-index:10}
+  body[data-roe-mobile-page="music"] .roe-music-masthead img{display:block;width:240px;height:112px;object-fit:contain}
+  body[data-roe-mobile-page="music"] .hero{height:auto!important;min-height:100dvh!important;overflow:visible!important;padding-bottom:calc(130px + env(safe-area-inset-bottom,0px))!important}
+  body[data-roe-mobile-page="music"] .cluster{position:relative!important;top:auto!important;left:auto!important;transform:none!important;width:calc(100% - 40px)!important;max-width:440px!important;margin:140px auto 0!important;padding:0!important}
+  body[data-roe-mobile-page="music"] .cluster-grid{gap:12px!important}
+  body[data-roe-mobile-page="music"] .cover-wrap{width:100%!important;justify-content:center!important;align-items:center!important}
+  body[data-roe-mobile-page="music"] .cover-card{width:min(320px,calc(100vw - 40px),max(140px,calc(100dvh - 496px)))!important;max-width:none!important}
+  body[data-roe-mobile-page="music"] .count-panel{padding:0!important}
+  body[data-roe-mobile-page="music"] .eyebrow{font-size:7px!important;line-height:1.5!important;letter-spacing:.13em!important}
+  body[data-roe-mobile-page="music"] .timer{gap:5px!important}
+  body[data-roe-mobile-page="music"] .unit{min-height:60px!important;padding:8px 4px!important}
+  body[data-roe-mobile-page="music"] .num{font-size:25px!important}
+  body[data-roe-mobile-page="music"] .label{margin-top:6px!important}
+  body[data-roe-mobile-page="music"] .cta-row{margin-top:10px!important;padding-right:0!important;justify-content:center!important}
+  body[data-roe-mobile-page="music"] .presave-btn{min-width:0!important;width:min(100%,280px)!important;min-height:48px!important;padding:10px!important;font-size:10px!important;gap:10px!important}
+  body[data-roe-mobile-page="music"] .world-clock{width:calc(100% - 40px)!important;max-width:440px!important;margin:22px auto 0!important}
+
+  /* Mobile comic entrance: standalone Toronto graphic above the cover. */
+  #roe-world .roe-world-feature{top:110px!important;left:50%!important;right:auto!important;transform:translateX(-50%);width:min(180px,calc(100% - 80px))!important;max-width:none!important;max-height:none!important;overflow:visible!important;padding:0!important;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important}
+  #roe-world .roe-world-feature #roe-live-world-panel-01{display:none!important}
+  #roe-world .roe-world-feature .roe-panel-toronto-sign{display:block!important;width:100%!important;height:96px!important;max-height:96px!important;margin:0!important;padding:0!important;border:0!important}
+
+  body[data-roe-mobile-page="booking"] .wrap{padding-left:18px;padding-right:18px}
+  body[data-roe-mobile-page="booking"] .nav{min-height:62px;gap:12px}
+  body[data-roe-mobile-page="booking"] .markmini{height:23px}
+  body[data-roe-mobile-page="booking"] .wordmark,body[data-roe-mobile-page="booking"] .navlinks a[href="#artist"],body[data-roe-mobile-page="booking"] .navlinks a[href="#release"]{display:none}
+  body[data-roe-mobile-page="booking"] .navlinks{gap:4px}
+  body[data-roe-mobile-page="booking"] .navlinks a{font-size:9px;padding:10px 9px;letter-spacing:.08em}
+  body[data-roe-mobile-page="booking"] .wrap.hero{padding:24px 18px 22px}
+  body[data-roe-mobile-page="booking"] .eyebrow{display:none}
+  body[data-roe-mobile-page="booking"] .heroCard{padding:22px 20px;border-radius:20px}
+  body[data-roe-mobile-page="booking"] .propertyTag{display:none}
+  body[data-roe-mobile-page="booking"] .signature{width:min(230px,100%);margin:0 auto}
+  body[data-roe-mobile-page="booking"] .roe-booking-original{display:none}
+  body[data-roe-mobile-page="booking"] .roe-booking-short{display:inline}
+  body[data-roe-mobile-page="booking"] .kicker{margin-top:18px;font-size:17px;line-height:1.45}
+  body[data-roe-mobile-page="booking"] .ctaRow{margin-top:20px;gap:8px}
+  body[data-roe-mobile-page="booking"] .button{min-height:44px;padding:13px 15px;font-size:9px;letter-spacing:.08em;gap:6px}
+  body[data-roe-mobile-page="booking"] .heroGrid{gap:24px}
+  body[data-roe-mobile-page="booking"] .heroAside{grid-template-columns:1fr 1fr;gap:10px}
+  body[data-roe-mobile-page="booking"] .miniCard{padding:14px;border-radius:12px}
+  body[data-roe-mobile-page="booking"] .miniLabel{font-size:8px;line-height:1.6;letter-spacing:.08em}
+  body[data-roe-mobile-page="booking"] .metric{font-size:34px}
+  body[data-roe-mobile-page="booking"] .miniText{font-size:11px;line-height:1.5}
+  body[data-roe-mobile-page="booking"] .chip{font-size:9px;padding:7px 8px}
+  body[data-roe-mobile-page="booking"] .releaseStrip{margin-top:20px}
+}
+
+@media(max-width:350px){
+  body[data-roe-mobile-page="music"] .clock-city{padding-inline:8px!important;gap:5px!important}
+}
+
+/* Phone framing uses the actual page frame, below the shared social strip. */
+@media(max-width:760px){
+  html:has(body[data-roe-scroll-page="home"]){overflow-x:clip}
+  body[data-roe-scroll-page="home"]{width:100%;overflow-x:clip}
+  body[data-roe-scroll-page="home"] main#home{
+    height:100svh;min-height:0;padding-bottom:calc(90px + env(safe-area-inset-bottom,0px));
+  }
+  body[data-roe-scroll-page="home"] .viewport{min-height:0;flex:1;overflow:hidden}
+  body[data-roe-scroll-page="home"] .room{
+    left:50%;top:50%;height:100%;width:auto;min-width:100%;aspect-ratio:1672/941;
+    transform:translate(-50%,-50%);animation:none;
+  }
+  body[data-roe-scroll-page="home"] .visitor{object-fit:contain;object-position:center bottom}
+  body[data-roe-mobile-page="world"]{width:100%;max-width:100%;overflow-x:clip}
+  body[data-roe-mobile-page="world"] .roe-app{width:100%;max-width:100%;min-width:0}
+  body[data-roe-mobile-page="world"] .hero-shell{min-width:0;max-width:100%}
+  body[data-roe-mobile-page="world"] .hero-note{white-space:normal;overflow-wrap:anywhere}
+}

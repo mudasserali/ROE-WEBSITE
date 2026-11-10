@@ -59,3 +59,18 @@ Open mobile layout findings (not yet fixed):
 2. ROE World at a 430px outer viewport has 430px inner document width against a 415px frame client width, producing a small horizontal scrollbar in the Chrome test. Recheck after correcting the frame-width/scrollbar interaction.
 
 No website source or design changes were made during this verification. Restore the browser's normal viewport after testing. Physical iPhone/Safari autoplay, touch gestures, and browser chrome/safe-area behavior remain untested.
+
+## Mobile fixes — November 10, 2026
+
+Resolved the mobile findings and the user's additional Home alignment request:
+
+- A dedicated black strip reserves 64px plus the top safe-area inset above the page frame. The social links remain centered there through navigation and scrolling. Mobile Booking uses that same shell-owned bar without a duplicate in its nested frame.
+- Home uses the actual available frame height, a centered room image, and a stable mobile transform. Space for the bottom navigation keeps the full girl visible. The desktop room animation is retained.
+- ROE World uses its frame's available width instead of 100vw, removing the horizontal scrollbar.
+- The radio's current track title wraps fully on phones instead of clipping after two lines.
+
+Local browser QA passed at 375 × 667, 390 × 844, and 430 × 932. The Home image center measured exactly half the viewport width at each size; each social bar stayed at top 6px with its horizontal center at half the viewport width. MUSIC remained scrollable; Booking's local social bar was hidden; ROE World measured 415px scroll width against a 415px client width in the 430px frame. Both top Media trailers played with readyState 4. The full Team Zissou title's content height matched its rendered height. A 1363px desktop check retained the original room animation and frame top of 0.
+
+The revised snapshot verifies 211 source inputs and 168 output files, totalling 407,753,100 bytes. Four production files changed; all other production output hashes are unchanged. Syntax checks passed for both edited JavaScript files. Physical iPhone/Safari testing remains unperformed.
+
+Production deployment: pending this mobile-fix commit. Record the successful deploy ID after publication.

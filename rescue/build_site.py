@@ -35,7 +35,9 @@ def collect(kind, item):
     if valid(target, item):
         return target
     partial = target.with_name(target.name + '.partial')
-    if 'chunks' in item:
+    if 'local' in item:
+        shutil.copyfile(safe_path(ROOT, item['local']), partial)
+    elif 'chunks' in item:
         with partial.open('wb') as f:
             for chunk in item['chunks']:
                 f.write(base64.b64decode(safe_path(ROOT, chunk).read_text().strip(), validate=True))
