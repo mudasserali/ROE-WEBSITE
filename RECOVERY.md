@@ -42,3 +42,20 @@ To run locally: `python3 rescue/build_site.py`. The verified output is `rescue/s
 This is a rescue snapshot, not a redesign. It depends on the pinned original Netlify deployment and current public press asset URLs during build. Netlify's automatic deletion setting is 90 days for eligible old deployments. Preserve these sources until the recovered media has a permanent Git/artifact mirror; a future missing/changed source will stop the build safely. The generated production site itself is self-contained.
 
 GitHub → Netlify deployment is now configured: commits to rescue/2026-11-09 trigger production builds. Keep the original deployment available for rollback. Future updates should begin from the verified production output and include matching file hashes in the build manifest. Use a separate branch for changes that need a preview before publishing, and update this log with each approved release.
+
+
+## Mobile verification — November 10, 2026
+
+Tested the live production site in Chrome at responsive viewport sizes 375 × 667, 390 × 844, and 430 × 932. This is responsive-layout testing, not physical iPhone/Safari or Android-device certification.
+
+- MUSIC fits the phone widths without horizontal document overflow. Manual wheel scrolling and press-menu anchor navigation work. The Russia filter shows two matching placements, and the playlist table fits its container.
+- At 375 × 667, both featured Media trailers play muted with readyState 4 and no media errors. Bottom navigation opens Media and Booking.
+- ROE Radio plays the Team Zissou opener (31-track rotation); play/pause/minimize work. At the narrowest size, the long track title is visually truncated but playback controls remain accessible.
+- Booking at 375 × 667 fits its frame, shows OUT NOW / RELEASED OCTOBER 23, 2026, and has form fields within the page width. Its close control works. No enquiry was submitted.
+- Contact at 430px fits without horizontal overflow. Home loads and displays its mobile entrance artwork and bottom navigation.
+
+Open mobile layout findings (not yet fixed):
+1. The floating social-links bar overlaps playlist positions on MUSIC at 390px and Booking description text at 375px. Its open-area placement does not consistently avoid text inside nested frames.
+2. ROE World at a 430px outer viewport has 430px inner document width against a 415px frame client width, producing a small horizontal scrollbar in the Chrome test. Recheck after correcting the frame-width/scrollbar interaction.
+
+No website source or design changes were made during this verification. Restore the browser's normal viewport after testing. Physical iPhone/Safari autoplay, touch gestures, and browser chrome/safe-area behavior remain untested.
