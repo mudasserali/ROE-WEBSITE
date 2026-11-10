@@ -88,4 +88,4 @@ Desktop-only rules apply at 761px and above. Mobile composition and content are 
 
 Browser QA passed at 1363px and 1024px: the MUSIC menu/radio/social groups do not overlap; Home social/menu center lines match; Media and World buttons are hidden; the flip signs are readable and in the requested positions; Contact loads the cover, all editorial rows, and a flat black background without horizontal overflow. At 390px, Contact retains its original background and has no injected editorial section; the social bar remains centered in its black top strip; Media's original mobile Listen Now button remains visible.
 
-Production deployment: pending the desktop layout commit.
+Production deployment: published November 10, 2026, deploy `6af33fd4bbe6211a0f3c9def` from commit `f8ed26b90766e524af73e9e45fda3e85d9fa8480`. Netlify reported a 23-second successful deploy. All four changed production files match their verified local SHA-256 values. The live Contact page shows the flat black background, loaded official cover, and all ten table rows (11 placements). The production snapshot contains 169 files and 407,770,950 verified bytes.
