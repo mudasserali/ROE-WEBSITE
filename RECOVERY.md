@@ -89,3 +89,11 @@ Desktop-only rules apply at 761px and above. Mobile composition and content are 
 Browser QA passed at 1363px and 1024px: the MUSIC menu/radio/social groups do not overlap; Home social/menu center lines match; Media and World buttons are hidden; the flip signs are readable and in the requested positions; Contact loads the cover, all editorial rows, and a flat black background without horizontal overflow. At 390px, Contact retains its original background and has no injected editorial section; the social bar remains centered in its black top strip; Media's original mobile Listen Now button remains visible.
 
 Production deployment: published November 10, 2026, deploy `6af33fd4bbe6211a0f3c9def` from commit `f8ed26b90766e524af73e9e45fda3e85d9fa8480`. Netlify reported a 23-second successful deploy. All four changed production files match their verified local SHA-256 values. The live Contact page shows the flat black background, loaded official cover, and all ten table rows (11 placements). The production snapshot contains 169 files and 407,770,950 verified bytes.
+
+## Mobile social panel update — November 12, 2026
+
+At the user's request, removed the reserved mobile social header and its 64px frame offset. The social panel is now vertical, centered over the compact radio launcher, with a 14px gap. The radio sits 12px lower on mobile. Radio position events keep the social panel attached after route/menu layout changes. Desktop placement rules and page content are unchanged.
+
+Responsive browser QA passed at 375 × 667, 390 × 844, and 430 × 932. The content frame starts at 0; the social panel measures 52 × 148px and shares the radio's horizontal center. At 390px, navigation through Home, Music, Media, ROE World, Contact, and Booking retained the panel-to-radio spacing. Booking's nested duplicate remains hidden. Desktop Home retains left 24px/bottom-menu alignment; Music retains its horizontal top-right social panel and 205px radio launcher. Physical phone/Safari testing remains unperformed.
+
+JavaScript syntax and repository whitespace checks passed. The builder verifies 215 inputs and all 169 output files (407,770,643 bytes). Only the two widget scripts change in the production output; all other output hashes match the prior deployment.

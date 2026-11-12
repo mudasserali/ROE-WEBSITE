@@ -95,6 +95,7 @@
      top:Math.round(constrain(top,8,innerHeight-height-8))+'px',
      right:'auto',bottom:'auto'
    });
+   if(matchMedia('(max-width:760px)').matches)window.dispatchEvent(new Event('roe:radio-position'));
  };
  const positionRadio=()=>{
    const mobile=matchMedia('(max-width:760px)').matches;
@@ -115,7 +116,7 @@
        const edge=Math.min(20,innerWidth*.05),width=64;
        const right=rectOK(menu)?menu.right:innerWidth-edge;
        const menuTop=rectOK(menu)?menu.top:innerHeight-78;
-       placeLauncher(right-width-8,menuTop-width-34,width);
+       placeLauncher(right-width-8,menuTop-width-22,width);
        return;
      }
      const desktopPlacement=window.ROE_DESKTOP_LAYOUT?.radioPlacement(route);
