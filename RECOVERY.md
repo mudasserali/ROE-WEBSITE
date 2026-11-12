@@ -97,3 +97,5 @@ At the user's request, removed the reserved mobile social header and its 64px fr
 Responsive browser QA passed at 375 × 667, 390 × 844, and 430 × 932. The content frame starts at 0; the social panel measures 52 × 148px and shares the radio's horizontal center. At 390px, navigation through Home, Music, Media, ROE World, Contact, and Booking retained the panel-to-radio spacing. Booking's nested duplicate remains hidden. Desktop Home retains left 24px/bottom-menu alignment; Music retains its horizontal top-right social panel and 205px radio launcher. Physical phone/Safari testing remains unperformed.
 
 JavaScript syntax and repository whitespace checks passed. The builder verifies 215 inputs and all 169 output files (407,770,643 bytes). Only the two widget scripts change in the production output; all other output hashes match the prior deployment.
+
+Published November 12, 2026 from commit `9996e17ec77c80a70175e8bf9126209f6607df26`. Both production widget scripts match the verified local SHA-256 values. Live production phone previews at 375px, 390px, and 430px confirm a frame top of 0, vertical social links, shared radio/social horizontal centers, and the 14px gap.
